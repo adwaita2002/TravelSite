@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./ContactFrom.css"
 import { useAuth0 } from "@auth0/auth0-react";
 import myimg from "../assets/profile3.png"
@@ -6,6 +6,43 @@ import myimg from "../assets/profile3.png"
 export default function ContactFrom() {
 
   const { isAuthenticated,user} = useAuth0();
+
+  const [text,setText]=useState("");
+  const [text1,setText1]=useState("");
+  const [text2,setText2]=useState("");
+
+  const handleUp =()=>{
+         
+         setText("");
+            alert(`Hey ${isAuthenticated ? user.name : ""} Thank You 👍 For Give Rating`);
+         
+  }
+  const handleLp =()=>{
+         
+         setText("");
+           
+         
+  }
+  const clickUp1 =()=>{
+         
+         alert(`Hey ${isAuthenticated ? user.name : ""} We Have Recevied 👍 Your Messege`);
+         setText1("");
+         setText2("");
+           
+         
+  }
+
+  const changeUp = (e) =>{
+         setText(e.target.value);
+  } 
+  const changeUp1 = (e) =>{
+         setText1(e.target.value);
+  } 
+  const changeUp2 = (e) =>{
+         setText2(e.target.value);
+  } 
+  
+
 
   return (
     <>
@@ -23,13 +60,13 @@ export default function ContactFrom() {
         <form>
              <input type="text" placeholder='Name' value={isAuthenticated ? user.name : ""}  autoComplete="off" required/>
              <input type="email" placeholder='Email'  value={isAuthenticated ? user.email : ""} />
-             <input type="text" placeholder='Subject'/>
-             <textarea rows="4" placeholder='Message'></textarea>
+             <input type="text" placeholder='Subject' value={text1} onChange={changeUp1}/>
+             <textarea rows="4" placeholder='Message' value={text2} onChange={changeUp2}></textarea>
             
         </form>
         
         <div className="buttoon">
-        <button className="btn btn-primary">Send</button>
+        <button className="btn btn-primary" onClick={clickUp1}>Send</button>
         </div>
         
          
@@ -61,7 +98,7 @@ export default function ContactFrom() {
                            
                            <div className="comment-area">
                                
-                               <textarea className="form-control" placeholder="what is your view?" rows="4"></textarea>
+                               <textarea className="form-control" placeholder="what is your view?" rows="4" value={text} onChange={changeUp}></textarea>
                            
                            </div>
                            
@@ -73,7 +110,7 @@ export default function ContactFrom() {
                                        
                                        <div className="pull-left">
                                        
-                                       <button className="btn btn-success btn-sm">Cancel</button>      
+                                       <button className="btn btn-success btn-sm" onClick={handleLp}>Cancel</button>      
                                            
                                        </div>
                                    
@@ -83,7 +120,7 @@ export default function ContactFrom() {
                                        
                                        <div className="pull-right">
                                        
-                                       <button className="btn btn-success send btn-sm">Send <i className="fa fa-long-arrow-right ml-1"></i></button>      
+                                       <button className="btn btn-success send btn-sm"  onClick={handleUp}>Send <i className="fa fa-long-arrow-right ml-1"></i></button>      
                                            
                                        </div>
                                    
