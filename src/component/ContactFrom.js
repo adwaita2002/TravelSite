@@ -12,9 +12,13 @@ export default function ContactFrom() {
   const [text2,setText2]=useState("");
 
   const handleUp =()=>{
+
+    if(text===""){
+        alert('Please Write Something For Me ')
+    }
          
-         setText("");
-            alert(`Hey ${isAuthenticated ? user.name : ""} Thank You 👍 For Give Rating`);
+         else{setText("");
+            alert(`Hey ${isAuthenticated ? user.name : ""} Thank You 👍 For Give Rating`);}
          
   }
   const handleLp =()=>{
@@ -25,9 +29,13 @@ export default function ContactFrom() {
   }
   const clickUp1 =()=>{
          
-         alert(`Hey ${isAuthenticated ? user.name : ""} We Have Recevied 👍 Your Messege`);
+      if(text1===""){
+        alert('please write somthing For Us');
+      }   
+    
+      else{alert(`Hey ${isAuthenticated ? user.name : ""} We Have Recevied 👍 Your Messege`);
          setText1("");
-         setText2("");
+         setText2("");}
            
          
   }
