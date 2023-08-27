@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css"
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
+import SingUp from "./pages/SingUp"
+import OneServices from "./pages/OneServices";
+import Book from "./pages/Book";
+import Aeroplane from "./pages/Aeroplane";
+import Hotel from "./pages/Hotel";
+
+export default class App extends Component {
+  render() {
+    return (
+      <>
+     <BrowserRouter>
+     <Routes>
+      <Route  path="/" element={<Home/>} />
+      <Route  path="/about" element={<About/>} />
+      <Route  path="/services" element={<Services/>} />
+      <Route  path="/booking" element={<Book/>} />
+      <Route  path="/services/:services_id" element={<OneServices/>} />
+      <Route  path="/contact" element={<Contact/>} />
+      <Route  path="/singup" element={<SingUp/>} />
+      <Route  path="/aeroplane" element={<Aeroplane/>} />
+      <Route  path="/hotel" element={<Hotel/>} />
+     
+     </Routes>
+        
+        </BrowserRouter>
+      </>
+    );
+  }
 }
-
-export default App;
