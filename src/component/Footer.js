@@ -44,8 +44,8 @@ const Footer = () => {
                 <h4>Help</h4>
                 <a href="/">Support</a>
                 <a href="/">Troubleshooting</a>
-                 <a href="tel:+91 7908475619"> <i class="fa fa-phone"></i><span>+91 7908475619</span></a>
-                <a href="/"><i class="fa fa-user"></i><span>Adwaita Garai</span></a>
+                 <a href="tel:+91 7908475619"> <i className="fa fa-phone"></i><span>+91 7908475619</span></a>
+                <a href="/"><i className="fa fa-user"></i><span>Adwaita Garai</span></a>
             </div>
             <div>
                 <h4>Other</h4>

@@ -9,8 +9,7 @@ import Contact from "./pages/Contact";
 import SingUp from "./pages/SingUp"
 import OneServices from "./pages/OneServices";
 import Book from "./pages/Book";
-import Aeroplane from "./pages/Aeroplane";
-import Hotel from "./pages/Hotel";
+
 
 export default class App extends Component {
   render() {
@@ -25,8 +24,7 @@ export default class App extends Component {
       <Route  path="/services/:services_id" element={<OneServices/>} />
       <Route  path="/contact" element={<Contact/>} />
       <Route  path="/singup" element={<SingUp/>} />
-      <Route  path="/aeroplane" element={<Aeroplane/>} />
-      <Route  path="/hotel" element={<Hotel/>} />
+      
      
      </Routes>
         

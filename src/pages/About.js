@@ -3,7 +3,7 @@ import Hero from "../component/Hero";
 import Aboutimg from "../assets/about.jpg"
 import Footer from "../component/Footer";
 import AboutUs from "../component/AboutUs";
-import Profile from "../component/Profile";
+
 function About (){
     return(
          <>
@@ -20,7 +20,7 @@ function About (){
            />
            <AboutUs></AboutUs>
            <Footer/>
-           <Profile/>
+      
 
          </>
     )
